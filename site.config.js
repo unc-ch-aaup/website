@@ -5,7 +5,7 @@ const ts = DateTime.local().setZone('America/New_York')
 module.exports = {
   site: {
     title: 'UNC Chapel Hill AAUP',
-    description: 'UNC Chapel Hill chapter of the AAUP',
+    description: 'UNC Chapel Hill chapter of the American Association of University Professors',
     timestamp: {
       iso: ts.toISODate(),
       pretty: ts.toLocaleString(DateTime.DATE_FULL)
