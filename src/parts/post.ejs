@@ -1,0 +1,8 @@
+<article id="<%= post.date.iso %>">
+  <header>
+    <time datetime="<%= post.date.iso %>">
+      <%= post.date.pretty %>
+    </time>
+  </header>
+  <%- post.body %>
+</article>

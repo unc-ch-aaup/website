@@ -1,0 +1,108 @@
+<section>
+  <p>
+    The UNC Chapel Hill chapter of
+    the <a href="https://www.aaup.org/">American Association of
+      University Professors</a> (AAUP) meets regularly to discuss
+    campus affairs relevant to
+    <a href="https://www.aaup.org/our-work/protecting-academic-freedom">
+      academic freedom</a>,
+    <a href="https://www.aaup.org/our-programs/shared-governance">shared
+      governance</a>, and other
+    <a href="https://www.aaup.org/issues-higher-education">issues of concern
+    </a> to higher education
+    workers.
+  </p>
+</section>
+<section>
+  <h2>News</h2>
+  <% posts.recent.forEach(post => { %>
+    <%- include('../parts/post', {post}); %>
+  <% }); %>
+  <% if (posts.more) { %>
+  <a href="/news<%= `#${posts.more}` %>" style="float: right">
+    <i>More news …</i>
+  </a>
+  <% } %>
+</section>
+<section id="officers">
+  <h2>Officers</h2>
+  <ul>
+    <li>
+      <h3>President</h3>
+      <p>
+        <b>Michael Palm</b><br>
+        Communication<br>
+        mwpalm@gmail.com
+      </p>
+    </li>
+    <li>
+      <h3>Vice President</h3>
+      <p>
+        <b>Jay Smith</b><br>
+        History<br>
+        jaysmith711@gmail.com
+      </p>
+    </li>
+    <li>
+      <h3>Secretary-Treasurer</h3>
+      <p>
+        <b>Karen Booth</b><br>
+        Women's and Gender Studies<br>
+        karenmbooth@gmail.com
+      </p>
+    </li>
+  </ul>
+</section>
+<section id="related">
+  <h2>Related organizations</h2>
+  <ul>
+    <li>
+      <p>
+        <a href="https://workersunionatunc.org">
+          Workers Union at UNC
+        </a>
+      </p>
+    </li>
+    <li>
+      <p>
+        <a href="https://aaupnorthcarolina.wordpress.com">
+          North Carolina Conference of the AAUP
+        </a>
+      </p>
+    </li>
+    <li>
+      <p>
+        <a href="https://www.networkofconcernedacademics.org">
+          Network of Concerned Academics
+        </a>
+      </p>
+    </li>
+    <li>
+      <p>
+        <a href="https://onefacultyoneresistance.org">
+          One Faculty, One Resistance
+        </a>
+      </p>
+    </li>
+  </ul>
+</section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    Please feel free to contact us:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <b>Email</b><br>
+        info@unc-ch-aaup.org<br>
+      </p>
+    </li>
+    <li>
+      <p>
+        <b>Twitter</b><br>
+        <a href="https://twitter.com/unc_ch_aaup">@unc_ch_aaup</a>
+      </p>
+    </li>
+  </ul>
+</section>

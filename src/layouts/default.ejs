@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+  <%- include('../parts/head') %>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="/">
+        <image alt="UNC Chapel Hill AAUP logo" src="/assets/AAUP-CH.svg">
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/#officers">Officers</a></li>
+        <li><a href="/#related">Related Organizations</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/bylaws">Bylaws</a></li>
+        <li><a href="https://www.aaup.org/membership/join">Join AAUP</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%- main %>
+  </main>
+  <footer class="right">
+    <span>
+      Last updated
+      <time datetime="<%= site.timestamp.iso %>">
+        <%= site.timestamp.pretty %>
+      </time>
+    </span>
+  </footer>
+</body>
