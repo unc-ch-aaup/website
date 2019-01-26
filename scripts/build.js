@@ -13,6 +13,7 @@ const outPath = config.build.outputPath
 
 fs.emptyDirSync(outPath)
 fs.copy(`${srcPath}/assets`, `${outPath}/assets`)
+fs.copy(`${srcPath}/favicons`, `${outPath}/`)
 
 const posts = glob.sync('**/*.md', {cwd: `${srcPath}/posts`})
 config.posts = {recent: [], all: []}
