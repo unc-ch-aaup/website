@@ -4,7 +4,8 @@
   "description": "UNC-CH AAUP chapter website",
   "scripts": {
     "build": "node ./scripts/build",
-    "serve": "serve -l 54321 ./site"
+    "serve": "npm -s run build && serve -l 54321 ./site",
+    "publish": "npm -s run build && ./publish"
   },
   "author": "UNC-CH AAUP <info@unc-ch-aaup.org> (https://unc-ch-aaup.org/)",
   "license": "UNLICENSED",
