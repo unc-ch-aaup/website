@@ -5,6 +5,7 @@ const marked = require('marked')
 const frontMatter = require('front-matter')
 const glob = require('glob')
 const { DateTime } = require('luxon')
+const { Feed } = require('feed')
 
 const config = require('../site.config')
 
@@ -78,3 +79,32 @@ pages.forEach(page => {
 
   fs.writeFileSync(`${destPath}/${pagePath.name}.html`, completePage)
 })
+
+const feed = new Feed({
+  title: config.feed.title || config.site.title,
+  description: config.feed.description || config.site.description,
+  id: config.feed.url,
+  link: config.feed.url,
+  image: `${config.site.url}${config.feed.image}`,
+  favicon: `${config.site.url}${config.feed.favicon}`,
+  feedLinks: {
+    atom: `${config.site.url}${config.feed.atom}`
+  },
+  author: config.site.author
+})
+
+config.posts.all.slice(0, config.build.feedPosts).forEach(post => {
+  const url = `${config.feed.url}#${post.date.iso}`
+  const ymd = post.date.iso.split('-').map(Number)
+  const dateTime = DateTime.local(
+    ...ymd, config.build.postHour).setZone(config.site.timezone)
+  feed.addItem({
+    title: post.title,
+    id: url,
+    link: url,
+    content: post.body,
+    date: dateTime.toJSDate()
+  })
+})
+
+fs.writeFileSync(`${outPath}/${config.feed.atom}`, feed.atom1())
