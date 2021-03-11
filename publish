@@ -5,4 +5,4 @@ git -C site init
 git -C site add .
 git -C site commit -m "Generated on $(date)"
 git -C site remote add origin "git@github.com:unc-ch-aaup/website.git"
-git -C site push -f origin master:site
+git -C site push -f origin main:site
